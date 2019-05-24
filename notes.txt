@@ -1,0 +1,1245 @@
+FM - is a great database application.
+Trial Version: https://content.filemaker.com/download-trial
+
+Tutorials:
+https://www.filemaker.com/learning/custom-app-academy/
+https://www.filemaker.com/learning/custom-app-academy/101/using-filemaker-pro-advanced
+https://www.filemaker.com/learning/custom-app-academy/201/overview.html
+
+Find another FM course where we dive deeper into scripting in FM.
+
+Resources:
+- https://www.filemaker.com/learning/
+- https://www.filemaker.com/custom-apps/resources/
+- community https://community.filemaker.com/s/
+- https://www.filemaker.com/partners/find-a-partner/
+
+
+Online Learning:
+FileMaker Custom App Academy https://www.filemaker.com/learning/custom-app-academy/FileMaker 
+Community Discussions https://community.filemaker.com/s/explore 
+Training Course Materials for download https://www.filemaker.com/learning/archived-learning-resources.html
+LinkedIn Learning Trial http://linkedin-learning.pxf.io/Gq9VV 
+Learning: FileMaker linkedin-learning.pxf.io/JZaoQ
+Tutorials on YouTube https://www.youtube.com/user/filemakermagazine/featured
+
+************************************************************************************************
+************************************************************************************************
+
+Learn how to design and build custom apps with FileMaker 17—the latest version of the powerful platform used everywhere 
+from home offices to Fortune 500 companies all around the world. Drawing on over 20 years of experience with clients at 
+his own development firm, iSolutions, Cris Ippolite walks through the essential FileMaker Pro skills, from creating tables 
+and fields to designing layouts that display your data in a smart way. He also shows you how to work with data, create 
+reports, import and export data, write scripts, perform calculations, and more. Watch now to start learning how to build 
+your first database from scratch.
+
+Learning Objectives:
+Database basics
+New features in the FileMaker 17 platform
+Getting going with starter apps
+Creating tables
+Adding fields
+Using container fields
+Creating, editing, and deleting records
+Importing and exporting data
+Creating layouts
+Formatting layouts
+Working with styles ad themes
+Searching for data
+Sorting data
+Building reports
+Calculations and functions
+Scripting
+
+------------------------------------------------------------------------------------------------
+------------------------------------ Introduction ----------------------------------------------
+------------------------------------------------------------------------------------------------
+1. Install FileMaker
+2. Quick look at Prefences.
+FileMaker 17 platform
+
+FileMaker Pro is a cross-platform relational database application from FileMaker Inc., a subsidiary of Apple Inc. 
+It integrates a database engine with a graphical user interface (GUI) and security features, allowing users to modify 
+the database by dragging new elements into layouts, screens, or forms. 
+
+Current versions are: FileMaker Pro Advanced 17, FileMaker Server 17, FileMaker Cloud 1.17, and FileMaker Go 17 for iPhone and iPad.
+
+FileMaker Pro 17 Advanced
+    - standard user version
+    - users can create and nodify dbs
+    - script debuggers
+    - create customized menus
+    - more developer features and functions
+
+FileMaker Server 17 (App)
+    - install on up two machines
+    - share dbs among users
+    - accessible to consecutive users
+    - publish dbs to the web
+
+FileMaker Go (App)  - to deploy your custom apps that you've just created onto your iOS devices.
+    - free app for iPad, iPod touch, or iPhone
+    - install db locally
+    - connect to db hosted in FileMaker Server
+
+FileMaker WebDirect
+    - not a product
+    - desktop or tablet browser access
+
+FileMaker Cloud
+    - hosting option
+    - runs on AWS Marketplace
+
+----------------
+FileMaker Pro Advanced
+
+Sidebar: My Apps, Recents, Create tabs. 
+*** File -> My Apps / Recents / Create / Hosts
+*** FileMaker Pro Advanced -> Preferences -> General -> Show recently opened files.
+*** File -> File Options -> Icon tab -> you can choose among 30 prebuilt icons or upload Custom icon
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 1. Getting Started --------------------------------------------
+------------------------------------------------------------------------------------------------
+
+------------- FM Database
+Database is a collection of like information with underlying attributes. Role:
+    - storing data
+    - identifying data
+
+Keywords: collections, attribuates, records, field.
+
+Data layer, presentation layer, and logic layer.
+
+*** View -> Layout Mode / Browse Mode
+*** File -> Manage -> Database -> Tables / Fields / Relationships tabs.
+*** Scripts -> Script Workspace.
+
+*** Share icon -> Upload to Filemaker Server (or Cloud)
+Once it's on FM Server, we can access hosted FileMaker solutions through a technology called FM Web Direct.
+
+*** File -> Manage -> Security
+You can setup API for your FM custom apps and host them on FM Server.
+
+
+------------- FM Preferences
+*** FileMaker Pro Advanced -> Preferences ->
+        -> General
+                - User Interface Options
+                - User Name
+                - Application
+                    - Use advanced tools (turn it on and restart FM app to see Tools in Menu)
+
+                    Advanced Features Include (keep it ON - don't turn off):
+                    - developer utilities
+                    - db design report feature
+                    - script debugger
+                    - data viewer
+                    - custom menus features
+                    - custom functions utility
+                    - copying field schemas or table schemas, and importing table schemas to consolidate tables from a multi-file solution into one file
+                    - copying and pasting layout themes
+        -> Layout
+            - Add newly defined fields to currrent layout (turn it off)
+        -> Memory
+        -> Plug-Ins
+        -> Permitted Hosts
+
+
+------------- FM Interface
+*** Records
+- status menu (at the top)
+    - status toolbar
+        - layout bar
+    - formatting bar
+- 
+
+In the Layout mode there are show/hide 
+    - the objects pane (Objects / Fields) 
+    - the inspector pane (*** View -> Inspectors).
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 2. FileMaker App Creation Essentials --------------------------
+------------------------------------------------------------------------------------------------
+Starter app (6 options are available), sample apps.
+
+*** File -> Create new -> Starter -> Meetings -> Create
+*** File -> Manage -> Database
+    Default fields (anytime you add a new table these default fields are automatically created):
+    - PrimaryKey
+    - CreatedBy
+    - ModifiedBy
+    - CreationTimestamp
+    - ModificationTimestamp
+
+Go into Layout mode, see all components: 
+    - fields - to enter data
+    - layout objects like tab controls (that let you compartmentalize the data)
+    - portals (related data like the topics data and the action items data)
+
+Double click on 'Action Items' tab -> Tab Control Setup dialog -> add 'Attandees' tab name.
+Click on 'Portal tool' -> drag an area -> Portal Setup -> Show records from: New Add-on Table (11 predefined options) -> 
+->choose People.
+
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 3. Creating Tables --------------------------------------------
+------------------------------------------------------------------------------------------------
+Methods to create a database in FM:
+- use starter or sample app that is prebuilt
+- create a solution from scratch
+    - what type of table you gonna have
+    Each group requires its own table.
+
+Another course: Relational Design with FM Pro (how to determine what tables you need, what relationships).
+
+Database:
+- Customers table
+- Products table
+- Invoices table
+
+Entities become tables, attributes become fields.
+Copy and paster 5 default fields into each table which was imported and doesn't have them.
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 4. Working with Fields ----------------------------------------
+------------------------------------------------------------------------------------------------
+Customer Fields:
+- [Text] company name                      - [Text] email address
+- [Text] street name                       - [Text] company website
+- [Text] city                              - [Text] phone number
+- [Text] state                             - [Text] fax number
+- [Text] zip                               - [Text] contact first name
+- [Date] date created                      - [Text] contact last name
+- [Text] record created by                 - [Text] contact title
+- [Timestamp] date modified                - [Container] company logo
+- [Number] discount rate                   - [Text] notes
+- [Number] tax rate
+
+Invoice Fields:
+- [Date] date created                      - [Number] shipping cost
+- [Text] record created by                 - [Text] notes
+- [Timestamp] date modified                - [Number] sales tax rate
+- [Calculation] invoice subtotal           - [Calculation] sales tax
+- [Calculation] invoice total              - [Text] ship via
+- [Date] invoice date                      - [Text] shipment status
+- invoice due date                         - [Number] terms
+- [Number] invoice discount rate           - [Number] weight
+- [Calculation] invoice discount
+
+Field types:
+- text
+- number
+- date
+- time
+- timestamp (combination of date and time)
+
+- container
+- calculation
+- summary
+
+View As:
+    Form View
+    List View
+    Table View
+
+*** Insert -> Field
+*** Layout mode -> Field tab -> Drag Prefences
+
+When you create a field -> click on Options.. button to see these tabs:
+    'Auto-Enter' (Calculated value -> Specify, Serial Number, Prohibit modification of value during data entry), 
+    'Validation', 
+    'Storage', 
+    'Furigana'.
+
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 5. Working with Container Fields ------------------------------
+------------------------------------------------------------------------------------------------
+- store and display any 'binary' format (includes digital images, videos, pdf files)
+- play music and sounds
+- store electronic documents (pdf, excel, word ect)
+
+Limitation: 1) Max 4Gb in size. 2) only 1 file per container.
+*** File -> Manage -> Database -> Options -> Storage -> Store container data externally -> Open storage. (this will reduce the size of our program)
+
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 6. Working with Records ---------------------------------------
+------------------------------------------------------------------------------------------------
+*** Records -> New Record
+*** Records -> Delete Record
+*** Tools -> Custom Menus ->
+Records are automatically saved. Committing in FM means saving.
+
+Committing Records:
+- clicking outside field area 
+- pressing enter key
+- switching modes
+- switching layouts
+- creating new records
+- closing a file
+
+Control users:
+*** File -> Manage -> Security
+
+To make field not editable: Layout mode -> Inspector pane -> Data tab -> Behavior -> Field entry -> uncheck Browse mode.
+
+Record Locking.
+
+Backup
+- on FM server daily backups
+- File -> Save a copy as -> type: compacted copy(smaller).
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 7. Importing and Exporting ------------------------------------
+------------------------------------------------------------------------------------------------
+*** File -> Import Records -> File..
+Types:
+    FM Pro Advanced Files
+    Tab-Separeted Values
+    Comma-Separeted Values (.csv)
+    Merge Files
+    Excel (.xls, .xlsx)
+    dBase Files
+
+*** File -> Export Records -> pick the fields
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 8. Creating Layouts -------------------------------------------
+------------------------------------------------------------------------------------------------
+Standard Layout types:
+- detailed view (form view) - it's one record per layout
+- list views    - show multiple records on a page at the same time
+
+*** View -> Layout mode -> Contact Master detail
+*** View -> Layout mode -> Layouts -> New Layout/Report.. -> Computer -> List -> choose Theme.
+The default theme is called Enlightened.
+The height of the body (main part).
+Layout setup (pencil sign) -> Views tab.
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 9. Working with Layouts ---------------------------------------
+------------------------------------------------------------------------------------------------
+*** Layouts -> Part Setup.. (add/reorder/delete parts - header, body, footer)
+
+Layout's Explicit Width.
+Choose part -> Inspector -> Position tab -> change height in pt (points high).
+
+Inspector tabs:
+    - Position
+    - Styles
+    - Appearance
+    - Data
+
+Layout mode - status bar
+    - Selection tool - select or resize objects on a layout
+    - Text tool - type text
+    - Line tool - create a line
+    - Shape tool - click and hold to choose a different tool
+    - Field/Control tool - add a field or control and choose its display type.
+    - Button or Popover button tool - click and hold to toggle between tools.
+    - Button bar tool - create a button bar
+    - Tab Control or Slide Control tool - click and hold to toggle between tools.
+    - Portal tool - display records from related tables
+    - Chart tool - create a Chart
+    - Web Viewer tool - display a web page
+    - Field tool - drag to add a field
+    - Part tool - drag to add a section such as a header
+    - Format painter - copy formats from objects and apply to selections.
+
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 10. Formatting Layout Objects ---------------------------------
+------------------------------------------------------------------------------------------------
+*** Layout mode -> Inspector -> Position -> Arrange & Align -> Group/Ungroup
+*** View -> Guides -> Show Guides
+*** View -> Rulers (many guides)
+
+Themes - is collection of styles that can be applied to layouts (CSS).
+Styles.
+
+*** File -> Manage -> Themes -> Import..(themes from other FM files)
+
+https://www.filemakerthemes.com/
+https://support.filemaker.com/s/article/Using-Screen-Stencils-to-design-iOS-friendly-layouts-using-FileMaker-Go-14-or-higher-1503693076890?language=en_US
+
+*** Insert -> Slide Control
+
+Popover - по сути попап.
+
+*** Layouts -> Set tab order..(переход между филдами с помощью таба)
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 11. Finding Data ----------------------------------------------
+------------------------------------------------------------------------------------------------
+and / or searches:
+Find -> New Request.
+Matching Records: Include / Omit.
+
+Search Operators: 
+Insert: Operators -> choose operator
+type searches -> Perform Find -> another search -> Requests -> Extend / Constrain Found Set
+Fast match: without leaving Browse mode -> right click on any search -> Find Matching Records 
+Right click on status bar -> drag quick search
+
+To make field eligible for search: 
+    in Layout mode -> View -> Show -> Quick Find
+    Inspector -> Data tab -> Behavior -> uncheck 'Include field for Quick Find'
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 12. Sorting Data ----------------------------------------------
+------------------------------------------------------------------------------------------------
+In case of reporting, or printing, or exporting, or even just viewing the data, 
+that might not always be the desired way to look at your data.
+Sort dialogue window.
+Records -> Sort Records.. (or just Sort button).
+
+Layout mode -> add two buttons -> Perform Script -> hit plus sign -> type scripting code: 
+    Sort Records [With dialog: Off]     // (users won't see the dialog - just sort)
+    Go to Record/Request/Page[First]
+
+Or right click on button -> Button Setup -> Perform a Script -> ... 
+
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 13. Value Lists ---------------------------------------
+------------------------------------------------------------------------------------------------
+Inspector -> Select Field (just click on it) -> Data tab -> Field -> Control style
+    - Edit Box
+    - Drop-down list (more like suggestions)
+    - pop-up menu (more like requirements)
+    - checkbox set
+    - radio button set
+    - drop-down calendar
+    - concealed(скрытый) edit box
+
+static value list:
+*** File -> Manage -> Value Lists.. -> New -> Use Custom values -> enter values each on a new row -> ok -> 
+    -> Layout mode -> Inspector -> Data tab -> Control style: pop-up menu -> values from: choose your list 
+    (or click on pencil to create a new list).
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 14. Printing and Saving ---------------------------------------
+------------------------------------------------------------------------------------------------
+some layouts should be for 
+    - data, 
+    - browsing and working with data
+    - printing
+
+*** Layout mode -> View -> Page Breaks
+*** File -> Page Setup -> Orientation: Landscape / Portrait
+*** File -> Print.. -> choose printer -> Show details -> Print: Records being browsed / Current record
+*** Browse mode -> Preview (it's actually printed version)
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 15. Reports ---------------------------------------------------
+------------------------------------------------------------------------------------------------
+summary field aggregates information about a found set:
+*** File -> Manage -> Database -> Fields -> create a new field: enter field name, choose type: Summary -> choose: 
+    - Total of
+    - Average of
+    - Count of
+    - Minimum
+    - Maximum
+    - Standard Deviation of
+    - Fraction of Total of
+    - List of
+-> ok -> Layout mode -> Layouts -> Part setup -> Create: Trailing Grand Summary. -> drag new field into this part. 
+(if you put it on the footer part it will be at the bottom on preview).
+
+
+sub-summary report (2 building blocks - summary field and sub-summary parts).
+*** Inspector -> Data tab -> Field: Display data from (nothing to change if it's ok) -> Layouts -> Part setup ->
+-> Create: sub-summary when sorted by. -> choose table and field name -> ok -> Print above ->
+-> you see a new part, drag the field to it and move other columns to its place, fill the part with a color, copy 
+summary field into this part. -> Browse mode. -> Sort. -> 
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 16. Calculation Essentials ------------------------------------
+------------------------------------------------------------------------------------------------
+FM app parts:
+1. Architecture
+    - place where we can store all information (tables, fields)
+2. Input
+    - layouts designed
+3. Output
+    - printing and reports
+
+Calculations:
+- a formula (or in math it's expression)
+- calculations will always have a result, or will return a result
+
+Calculation Formula Usage:
+- field can hold and display a result of a calculation
+- can be used to validate fields
+- can assign initial values to a field
+- scripting
+
+Calculation Dialogue window
+1) File -> Manage -> Database -> fields tab -> create new with a type: Calculation -> Create -> you see 'Specify Calculation' popup -> choose function, field
+2) Tools - > Data Viewer -> Watch tab -> plus button -> you see the same 'Edit Expression' popup but with results -> copy expression and paste into previous dialogue
+3) Layout mode -> Inspector:Data tab -> Behavior: Hide object when -> click on pencil to open 'Specify Calculation' popup.
+In 'Specify Calculation' popup always write boolean formula: isEmpty() inside of which the calculation.
+
+> Number functions:
+    Round
+    Int 
+    Floor / Ceiling
+> Date and time functions
+    Month
+    Year
+    MonthName
+    DayName
+    Date()
+    Time()
+> Text functions
+    Length
+    WordCount
+    PatternCount
+    Trim
+    LeftWords / RightWords
+    LeftValues / RightValues
+    Middle
+> Logic functions
+    If
+    Case    (when many conditions)
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 17. Script Essentials -----------------------------------------
+------------------------------------------------------------------------------------------------
+Scripting:
+- sequence of stored instructions
+- almost anything you can do manually can be scripted
+
+Examples:
+- navigation
+- import / export
+- data entry
+- reporting
+
+Preparation:
+1) determine the end goal
+    - printing a report
+    - navigating to a layout
+2) There are many ways to accomplish the task
+3) Be familiar with the script steps
+
+
+Assigning script steps to buttons:
+Layout mode -> choose a button object -> Inspector: Position tab -> Arrange & Align: unlock it 
+(we can't assign a script action to a button that's locked)-> double click on button (or if it's
+not a button but a field - right click on it - Button Setup) ->
+Action:
+1) Single step
+there's about 180 to couple hundred of steps.
+    New Record/Request (under Records)
+    Go to Layout (under Navigation)
+2) Perform a script
+    choose existing script
+
+Scripts -> Script Workspace..
+
+Customer Welcome Letter Script
+1. Navigate to 'customer welcome letter' layout.
+2. Set Page setup to print only current record.
+3. Print.
+4. Navigate back to original layout.
+
+# comment
+
+Scripts -> Script Workspace.. -> plus sign -> name the script 'customer welcome letter' ->
+-> Scripts -> Save Script - >
+
+    Go to Layout["Customer Welcome Letter" (Customers) ; Animation: None]
+    # Enter Find Mode [Pause: Off]
+    # Set Field ["Pending"]
+    Perform Find [Restore]
+    # Set Portrait
+    Print Setup [Restore ; With dialogue: Off]
+    # Print only one record
+    Print [With dialog: On]
+    # Nav back to original layout
+    Go to Layout[ original layout; Animation: None]
+    # Confirmation
+    Show Custom Dialog ["Your letter has been printer"]
+    
+
+Star in the name of script says that you need to save it.
+Click on bug icon to debug your script -> click on 'Step into' icon
+Layout mode -> 
+
+Find script
+Function: Perform Find
+
+Creating a New Customer Script
+1. Open new window.
+2. Navigate to new 'add customer' layout.
+3. Create new record.
+4. Close window.
+5. Back to invoice.
+
+    New Window [Style: Card ; Using layout: "New Customer" (Customers)]
+    New Record/Request
+    Go to Field [ Customers:: CompanyName ] 
+
+
+    if / else
+
+    If [Customers::Status="Inactive"]
+        Go to Layout["Customer Inactive Letter" (Customers) ; Animation: None]
+        Set Variable [$status ; Value: "inactive" ]
+    Else If [Customers::Status="Pending"]
+        Go to Layout["Customer Welcome Letter" (Customers) ; Animation: None]
+        Set Variable [$status ; Value: "welcome" ]
+    End If
+    Print Setup [Restore ; With dialogue: Off]
+    Print [With dialog: On]
+    Go to Layout[ original layout; Animation: None]
+    Show Custom Dialog ["Your letter has been printer"; "Your "& $status&" Letter Has Been Printed"]
+
+Tools -> Data Viewer: Current tab.
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 18. New Features in Version 17 --------------------------------
+------------------------------------------------------------------------------------------------
+- starter apps and add-on tables. (default fields)
+- master-detail layouts (by adding portal)
+- sensor support in FM Go (GetSensor f-n)
+    Sensors that FM can read: battery level and status, location, altitude, acceleration and speed, 
+    magnetic fields or compass headings, step data, air pressure, 
+    availbale f-n tells us which sensors are available on the device that's running your app.
+
+- FM data migration tool (to upgrade apps)
+    If you have FM Developer Subscription, or FDS, you can go online, log into your account, and search
+    for the FM Data Migration Tool. Use Terminal './FMDataMigration' to see available commands.
+- FM Server Admin Console
+
+------------------------------------------------------------------------------------------------
+-------------------------------- Conclusion --------------------------------
+------------------------------------------------------------------------------------------------
+http://www.isolutionstraining.com/
+
+
+************************************************************************************************
+************************************************************************************************
+******************************** Custom App Academy ********************************************
+************************************************************************************************
+************************************************************************************************
+
+> Planning the Order Management app
+Imagine you planning a custom app for retail business that focuses on customer relationships. 
+You need to know the specific workflow that your app needs to support. For this custom app you wanna track
+customers and products they buy. You'll manage the orders and keep track of your inventory. You'll focus on
+a sales person and an inventory manager. Start with a sales person - they'll manage customer and order information.
+In order to manage customers they need to track customer information and look up customers.
+In order to manage orders they need to create orders for new and existing customers, select products for each order
+and update inventory numbers based on pay orders. 
+An inventory manager has a different role, they'll focus on managing products, they lead to create new products
+and edit existing products, update inventory on all products, and on a monthly basis review bestselling products
+to help figure out what products to stock.
+Each one of these parts of the workflow can be broken down futher. For example, in order to create orders,
+a sales person has to select a customer, select products, including quantities and discounts and receive payments.
+In a future version of the app you might integrate order process with a third party payment service like Paypal.
+The invertory manager who updates inventory wait for the products will need to add products, search for products,
+and set the bar code so that the sales can scan the product.
+
+> How the Order Management app works
+In this video you'll walk through custom order management app. Keep in mind that this app was designed to be used
+on ipad. When you tap on 'Manage Customers', you'll be able to search for an existing customer or add a new customer.
+You are able to search by common information like phone number, email address, and name. After searching you'll tap 
+on a customer to see partner information about customer. From there you can edit their data or you can create a new order. 
+Once you ready to create an order, you'll see a list of products, you can search by a product's name to narrow down a list,
+you can also use a camera on an ipad as a bar code .... 
+
+> Under the hood of the Order Management app
+.....
+
+
+CRM App                 - Organize, track and manage your customers using the CRM Sample app.
+Order Management App    - Manage your product inventory with the Order Management Sample app.
+https://www.filemaker.com/learning/downloads/sample-apps/resources.html
+
+1) Create: Build Your app (2 hours)
+2) Create: Extend Your app (2 hours)
+3) Share: Share using FileMaker Cloud (42 min)
+4) Share: Share using FileMaker Server (40 min)
+5) Integration (1 hour)
+6) Highlights from the FileMaker 16 Platform (30 min)
+7) New in the FileMaker 17 Platform (30 min)
+
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 1) Create: Build Your app -------------------------------------
+------------------------------------------------------------------------------------------------
+
+--------- Lesson 1: Making a plan
+Techniques for planning your app:
+1. work with users to list your pain points in existing workflow
+    brainstorm questions:
+    - who is the person or group of people involved in each task?
+    - what do they need to accomplish?
+    - what is the pain point associated with that task?
+    
+    Example of Pain points:
+    - clients wait too long
+    - physical therapists take handwritten notes
+    - physical therapists are rushed and don't complete forms
+    - office staff re-key paper forms
+    - reports are hard to gather and prone to error
+
+2. choose one goal
+3. write problem statements
+    Example of problem statement:
+    - design (a feature or an app)               a mobile app / menu / a form 
+    - for (who you're designing it for)          therapists / therapists / patients
+    - to (what they will do with the app)        record services delivered to clients during their visit / select from a set of services / sign a confirmation
+    - so (resulting benefits)                    service data is easy to enter and more / they're efficient and accurate    / we have a record that they received services
+
+4. identify features
+
+--------- Lesson 1: Designing for your users
+How your team will interact with your designing:
+- user centered design
+- workflow
+    Screens:
+    - client info
+    - visit date and time
+    - service data
+    - signature
+    - notes
+
+    Screens:
+    - selecting a client from a list
+        - put title at the top (e.g. 'Clients')
+    - recording client visit with services and dates
+        - e.g. 'Client Detail', 'Visit List', 
+    - recording service information
+        - e.g. 'Visit Detail'
+- wireframes
+
+
+--------- Lesson 1: Touring the activity file
+The file will be created is called 'Service Tracker.fmp12'
+
+*** Attached File: 'Service Tracker' app
+    Account Name: administrator
+    Password: admin_clinic
+
+Signature is an ipad only feature - not laptop/computer.
+
+--------- Lesson 2: Learning about data organization
+Table, Field, Record, Relationship
+
+Tables: 
+    client
+        fields: first name, last name, city, phone, email, photo
+    visit, 
+        fields: visit data, visit time, therapist, signature, note
+    service
+        fields: service name, duration
+
+--------- Lesson 2: Designing your data model
+Primary Key (e.g. Client ID)
+Foreigh Key 
+
+Types of relationship:
+•In a one-to-one relationship, one record in Table A matches one record in Table B.
+•In a one-to-many relationship, one record in Table A matches many records in Table B.
+•In a many-to-many relationship, many records in Table A match many records in Table B.
+
+Related Resource(s)
+https://fmhelp.filemaker.com/help/17/fmp/en/#page/FMP_Help%2Fplanning-databases.html
+
+
+--------- Lesson 3: Creating tables and fields
+UUID - Universally Unique Identifier (mix of letters and numbers)
+
+--------- Lesson 3: Adding data to your tables and fields
+importing data
+--------- Lesson 3: Creating relationships between two tables
+--------- Lesson 4: Creating your first user layout
+--------- Lesson 4: Refining the list layout
+--------- Lesson 5: Creating a portal to show related data
+--------- Lesson 5: Setting up a portal to add related records
+
+--------- Lesson 6: Accessing iPad capabilities in your app
+    - share an app from your desktop
+    - take photos
+    - capture a signature
+
+Install FM Go app (on ipad or iphone).
+File -> Sharing -> Share with FM clients.. -> in Network Sharing select 'On' -> select a file ->
+-> under 'Network Access to file' choose 'All users' -> ok
+-> the file now shared over your local area network(LAN). Make sure your ipad is connected to the 
+same network as your computer. -> On ipad open 'FM Go' -> tap the Host button -> tap on your computer name 
+which will shows as a local host -> if 'Security Warning' tap 'Always Permit Connections' -> your app will appear ->
+-> tap to open -> tap the action arrow on the top left corner then tap 'Layout' -> choose 'Client Details' -> 
+-> use search icon for searching -> 
+
+--------- Lesson 6: Formatting field objects
+Layout mode -> View -> Show -> Sample data.
+To change date / time format: Inspector -> Data tab -> Data Formatting: Format.
+Inspector -> Data tab -> Touch keyboard type -> Number Keypad.
+
+Conditional formatting:
+Format -> Conditional -> Add ->Condition: in the second field choose 'empty' -> Fill: choose color.
+
+--------- Lesson 7: Creating calculations
+Full name: first name & " " & last name
+Choose 'Calculation result is': Text
+
+--------- Lesson 8: Creating a report
+
+To create chart report:
+click on sub summary number on browse mode -> Chart -> made necessary changes under Chart and Styles tabs -> 
+-> Save as Layout (the script will be automatically created under Scripts -> Script Workspace..)
+
+--------- Lesson 9: Working with scripts
+Script steps (example): 
+    - navigate to a Layout
+    - sort the records
+
+Script steps (example): 
+    - go to report layout
+    - enter Find mode
+    - perform the find
+    - sort the records
+    - go to the first record
+
+Run script automatically:
+Show the Script menu management(under Scripts from the left in Scripts Workspace) -> 
+-> if you active the checkbox - the script will appear in Browse mode.
+
+Searching for a range (use three dots): 25...35
+
+--------- Lesson 9: Improving navigation with buttons
+
+--------- Lesson 10: Adding security
+Setting password protection and TouchID login.
+
+Each account has:
+- account name
+- password
+- privilege set
+
+File -> File Options -> by default the app is using Admin account which currently has no password  
+File -> Manage -> Security -> Ignore (you'll fix later)-> Use Detailed Setup -> 2 accounts are created with each file (Guest and Admin) ->
+-> click on 'Privilege Sets' tab -> 
+    Full Access - for anyone who does development
+    Data Entry Only - view, create and view but won't be able to switch to Layout mode, write scripts, add fields.
+    Read-Only Access 
+-> click on 'Account' tab -> Admin -> change admin username and add password.
+    username: administrator
+    pw: admin_clinic
+-> click on 'Account' tab -> New
+    username: Amy Garcia    (note that the username is not case-sensitive)
+    pw: clinic (new: clinic1)
+    -> click on 'Require password change on next sign-in
+    -> Privilege Set: Data Entry Only 
+
+-> File -> File Options -> turn off 'Log in using' -> turn on 'Allow Keychain Access to save password ->
+-> turn on 'Require iOS password' -> 'Switch to Layout': choose initial layout -> ok
+
+Add script called 'Re-Login' -> find Re-Login [With dialog: On]
+
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 2) Create: Extend Your App ------------------------------------
+------------------------------------------------------------------------------------------------
+--------- Lesson 1: New requests and features
+--------- Lesson 1: Touring the activity file
+The first screen of your app will be dashboard: logo + bg image + buttons.
+Home button on each page of the app (except homepage).
+
+--------- Lesson 2: Improving the client list
+1) Turn off Browse mode on fields (in Inspector on Data tab).
+2) Click on Body part -> turn off 'Use active row state' (you won't have blue highlight)
+3) choose 'First name' field -> Inspector: Styles tab -> choose Minimal Edir Box -> Appearance tab: make padding left and right equal to zero.
+4) Appearance tab -> button styles: normal / hover / pressed / in focus. -> Graphic: Fill - none, Line - none.
+
+Create Field 'Last Name Initial' -> choose function called 'Left', example: Left(Last Name; 1)
+
+--------- Lesson 3: Writing a script from scratch
+Local variables always start with $ (dollar sign)
+
+Functions: 
+    Show Custom Dialog
+    Delete Portal row
+
+--------- Lesson 3: Scripting a delete with a custom dialog
+--------- Lesson 3: Creating a dynamic script with script parameters
+--------- Lesson 5: Planning your data model changes 
+--------- Lesson 5: Making your data model changes
+??? возникли вопросы по relationships
+
+--------- Lesson 5: Helping users enter foreign key data
+--------- Lesson 5: Use scripting to power your reports
+
+--------- Lesson 6: Creating multi-level sub-summary reports
+--------- Lesson 6: Sending email reminders
+'Send Mail' function
+
+--------- Lesson 7: Creating a dashboard
+
+Get(ScriptParameter) = "New Client"
+
+--------- Lesson 7: Scripting a quick find
+Create a field "Global Search" in Dashboard table -> under Options: Storage tab -> check 'Use global storage'
+
+*** Edit -> Copy Object Style -> select button -> Edit -> Paste Object Style.
+Inspector:Data tab -> Placeholder text.
+Inspector:Data tab -> Go to next object using: check Return and Enter.
+*** Format -> Set Script Triggers (in other words - actions) -> turn on OnObjectSave -> create a new script
+called 'Search Client from Dashboard -> 
+
+    Set Error capture [On]
+    Go to Layout ['Client list' (Client); Animation: none]
+    Perform Quick Find [Interface:: Global Search]
+    If[Get (LastError) = 401]
+        #  no records found
+        Go to Layout [original layout]
+        Show Custom Dialog
+    Else If [Get (FoundCount ) =1]
+        Go to Layout ['Client Details']
+    Else
+        Sort Records []
+        Go to Record/Request/Page[First]
+    End If
+    Set Field[Interface::Global Search; ""] // to clear global search field
+
+*** File -> File Options -> Switch to Layout 'Dashboard'
+
+
+--------- Lesson 8: Creating a Privilege Set from Scratch
+
+Privilege Criteria for Therapists
+            View    Edit    Create  Delete
+Client       +      +       +       -
+Visit        +      +       +       -
+Service      +      +       +       +
+Billing code +      -       -       -
+Interface    +      +       -       -
+
+
+Create a new privilege set -> name it 'Therapists' -> Data access and design: choose custom privileges ->
+select all tables to quicker insert yes/no
+
+Inspector:Data tab -> Hide object when -> f-n Get(AccountPrivilegeSetName) = "Therapists"
+
+--------- Lesson 9: Testing your app with users
+List your features: tell users what to test
+Write clear testing instructions: teach them how to test
+Create a feedback form: list the feedback you need
+Assess feedback: prioritize bugs and new feature requests
+Fix issues: update your app and then re-test
+
+Test for: 
+1. Security
+2. Device
+3. Platform
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 3) Share: Share using FileMaker Cloud -------------------------
+------------------------------------------------------------------------------------------------
+--------- Lesson 1: Understanding FileMaker Cloud
+FileMaker Cloud is set up and run on platform AWS.
+it's virtual server.
+Cloud server = "instance"
+Choose size: 
+    t2.medium (most users start with it)
+    t2.large
+    c4.xlarge
+    m4.xlarge
+
+Steps:
+setup cloud -> purchase licenses -> load your app on the cloud.
+backup is automatically every 20 min.
+
+Security measures:
+- Encryption At Rest
+- SSL
+
+Two components of FM Cloud (price is separeted):
+- AWS as your cloud instance
+- FM Cloud as the hosting software
+
+FM Cloud Setup:
+- how many User Connections
+- hourly or annually billing
+- what instance type you need
+
+--------- Lesson 2: Purchase and Setup
+1. Create AWS Account https://portal.aws.amazon.com/billing/signup#/start
+2. Create & Save PEM File
+    - Select a region 
+    - click on 'EC2' under Compute
+    - find 'Network&Security' -> select 'Key Pairs' -> click on 'Create Key Pair' -> pull name -> ok ->
+    -> file name.pem will be saved locally
+3. Purchase FM Cloud from AWS Marketplace
+    https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=filemaker+cloud
+    - choose 5 / 10 / 25 / 100 users
+    - click on 'Continue to Subscribe'  -> 'Accept Terms' -> get email -> 
+    -> determine to pay hourly or annually -> 'Continue to Configuration' -> Continue to Launch ->
+    -> select 'Usage instructions' -> scroll to the bottom to select one of the regions (Oregon) -> 
+    -> that will start stack creation process
+    -> fill Parameters section -> next -> ok. -> You'll see status 'CREATE_IN_PROGRESS' -> receive email (process is complete)
+    -> from email click on link to 'Setup page'
+
+--------- Lesson 2: Creating the FileMaker Cloud Stack
+Setting Up FM Cloud:
+1. Create a Key Pair
+2. Purchase FM Cloud
+3. Create FM Cloud instance
+4. Finalize FM Cloud Account
+
+After you sign in to your AWS marketplace account, go to https://console.aws.amazon.com.
+Here you'll be able to create Key Pair...
+
+--------- Lesson 3: Deploying Your App
+FM Cloud Admin Console is a place where you manage AWS instance and FM Cloud Subscription.
+Use FM Pro or FM Pro Advanced to upload app to FM Cloud.
+Sequrity requirements:
+- set admin password
+- turn on extended privileges
+- encrypt your app
+
+Open FM Pro to:
+    1) add admin pw
+        *** File -> Manage -> Security -> 'Accounts' tab
+    2) set extended privileges
+        *** File -> Manage -> Security -> 'Extended Privileges' tab
+        on 'Extended Privileges' tab -> choose 'fmapp' -> turn on all accesses -> ok.
+
+        If you have users that need access your app through FM web direct or through a web browser, you'll need to
+        turn on 'fmwebdirect' privileges (all except 'read-only' option).
+    3) encrypt your app
+        *** File -> Sharing -> Upload to FM Server -> ok -> in the 'Host Address' area type hostname that you setup,
+        e.g. fmc0001.fmi.filemaker-cloud.com
+        -> enter FM Server name(e.g. 'support@filemaker.com') and pw -> next -> upload -> done.
+        Through your web browser open 'https://[host].fmi.filemaker-cloud.com/fmi/webd' -> enter name and pw -> 
+        'Dashboard' tab -> under 'System Overview' you'll see:
+            - 1 Total Databases
+            - 0 Hosted Databases
+            - 0/5 User Connections
+        Click on 'Databases' tab -> on the left under down icon click 'open' -> you'll see blue icon indicating that
+        your app is open and available for users to open it.
+        Your app is officially hosted in the cloud and ready for use.
+
+--------- Lesson 3: Accessing Your App
+Desktop -> FM Pro
+    *** File -> Open Remote.. -> choose 'Hosts' tab -> on the bottom left click on plus sign -> 
+    -> enter 'Host's Internet Address' (you can copy & paste it from FM admin console) -> Save ->
+    when you open app you'll notice its name with host in brakets (this means it's hosted in cloud not your local machine)
+
+Web Broser -> FM Web direct
+    https://[host].fmi.filemaker-cloud.com/fmi/webd
+ios device (ipad/iphone) -> FM Go
+    download 'FM Go' app -> tap 'Hosts' button -> click plus sign -> Save.
+
+--------- Lesson 4: Exploring the FileMaker Cloud Admin Console
+Dashboard
+Databases
+Backups
+Configuration
+Subscription
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 4) Share: Share using FileMaker Server ------------------------
+------------------------------------------------------------------------------------------------
+--------- Lesson 1: Understanding FileMaker Server
+
+--------- Lesson 2: Installing FileMaker Server
+Download 'FileMaker Server 17' app.
+Requirements for Installing FM Server:
+- review hardware and software spec
+- disable sleep mode / screen savers
+- stop Apache server (on Mac) / IIS (on Windows)
+- close FM Pro Advanced
+- License Key
+
+localhost:16001/admin-console/app/dashboard
+
+--------- Lesson 2: SSL Certificate Overview
+Certificate Type:
+- Single-Domain
+- for multiple servers: Wildcard or SAN (Subject Alternate Name)
+
+Security Level:
+- Domain Validation(DV)
+- Organization Validation (OV)
+- Extended Validation (EV) - domain, organization, legal rights and physical existance
+
+Once you've decided what type and level of SSL Certificate you need - you purchase it online.
+
+--------- Lesson 2: Installing an SSL Certificate
+Fully Qualified Domain Name (FQDN)
+
+Installing an SSL Certificate:
+1. Generate a Certificate Signing Request (CSR).
+2. Purchase SSL Certificate.
+3. Import the Certificate.
+
+Terminal Commands:
+> fmsadmin certificate create fmtest-fms-01@host.cloud --keyfilepass abc123@fms
+username: scfms_amin
+password: **********
+The output of the command will generate 2 files which will be your CSR: 'ServerKey.pem' and 'serverRequest.pem'
+FM Server 17: Configuration -> SSL Certificate -> Import Custom Certificate 
+
+--------- Lesson 3: Deploying your app to FileMaker Server
+--------- Lesson 3: Accessing your app from desktop, browser and mobile
+--------- Lesson 4: Configuring FileMaker Server using the Admin Console
+--------- Lesson 4: Configuring FileMaker Server using the Command Line Interface (CLI)
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 5) Integration ------------------------------------------------
+------------------------------------------------------------------------------------------------
+--------- Lesson 1: Integration: Your App is Not an Island
+--------- Lesson 1: Integration Techniques
+1) Web Viewer: display a web page in your app. It's a layout tool available in FM Pro Advanced. 
+With a web viewer you display a website right from inside your app. e.g. map, shipping company website etc.
+2) Import / Export: pull and push data 
+3) ESS (External SQL Source): connect to an external SQL source. 
+Allows real-time connection to data outside of your app.
+ESS option available with specific datasources including:
+- Microsoft SQL
+- MySQL
+- Oracle
+- DB2
+4) Insert from URL: pull data from a web service with this script step. 
+It's a technique that enables data for integration using a set of instructions called an API.
+An app can connect to a web server to pull or push data to it. 
+5) Run system-level script interact with the local desktop
+6) FMP URL protocol: trigger a FileMaker action from the web
+7) FileMaker APIs: talk directly to FileMaker from other apps
+FM platform has API for Rest(json ??), php, XML.
+8) Plug-Ins use connectors already created by FileMaker Partners
+
+--------- Lesson 2: Introduction to ESS
+ESS Components:
+- ODBC Driver
+- DSN (configuration file)
+- SQL Credentials
+
+
+--------- Lesson 2: Setting up ESS on Mac OS
+1. Install ODBC Driver
+    https://support.filemaker.com/s/article/Which-ODBC-data-sources-drivers-are-supported-with-External-SQL-Data-Sources-1503692938173?language=en_US
+
+2. Configure DSN
+3. Connect FM App to SQL Source
+
+--------- Lesson 2: Setting up ESS on Windows OS
+--------- Lesson 2: Using ESS
+Shadow tables
+Shadow fields
+Supplemental Fields
+
+Limitations of ESS:
+- accessing binary objects
+- using rich text
+- indexing data
+
+*** Script Workspace -> 'Insert from URL[off]' f-n
+
+JSONGetElement()
+
+API example: https://www.zipcodeapi.com/API#distance
+
+--------- Lesson 3: Introduction to the "Insert From URL" Script Step
+--------- Lesson 3: Getting Started with Insert From URL
+--------- Lesson 3: Insert From URL: Taking it further
+------------------------------------------------------------------------------------------------
+-------------------------------- 6) Highlights from the FileMaker 16 Platform ------------------
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+-------------------------------- 7) New in the FileMaker 17 Platform ---------------------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+                        COURSE. FileMaker: Relational Database Design
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+Learning Objectives:
+Diagramming your relationships
+Problems caused by many-to-many relationships
+Adding a join table
+Defining primary and foreign key fields
+Working with relationships and queries
+Creating child records
+Using advanced relationship techniques
+
+
+Relationships and queries in FM.
+
+Flat File vs Relational Database
+flat file: e.g. spreadsheet, word processing document.
+Storage places all data into a single file.
+
+
+Types of Relationships:
+1) one to one   
+    e.g. Customer - Address
+    -> defineall address fields in customer table
+2) one to many
+    e.g. Order - Products
+    one (or 'parent') is related to many (or 'child' table).
+3) many to many
+    e.g. Customer - Orders
+    -> create 3rd table (joint table)
+
+All relationships should become 'one to many'.
+
+Entity Relationship Diagram (ERD)
+phases: 
+1) develop a list of entities(or tables) that belong in the data model
+    e.g. customer, orders, products
+2) determine and diagram the relationships between those entities
+    e.g. Customer --||- Address     
+    e.g. Order -||--||- Products    many to many
+    e.g. Customer --||- Orders      one to many
+3) review the diagram for correctness and consistency.
+
+Creating joint table:
+actor -||--||- movies
+1. add 3rd table and call it 'roles' or 'actor/movies'
+2. create one to many relationship between actors --||- roles and another between movies --||- roles
+
+Key fields:
+1. Primary key (parent)
+2. Foreign key (child)
+
+e.g. Customer (customer ID - pk) --||- Orders
+
+customers (primary)
+orders (primary, foreign-customers)
+order line items (foreign orders, foreign-products)
+products (primary)
+
+
+Rename 'PrimaryKey' field to '_pkCustomerID'
+
+Joint table needs 2 foreign keys because it's a child.
+
+related fields (starts with ::) vs not related fields
+
+Relationships (parent[pk] and child tables [fk]) vs queries
+Query is a requst for data or information from database table or combination of tables.
+(you are in a parent and asking for data and defining what data you need ).
+
+When you click on relationship you see pk = fk.
+When you click on query you see pk = fk, AND additional parameter(other criteria).
+
+Table occurence (TO) is an occurence or an instance of a database table in a relationship graph.
+
+!!! 'Add a table' button under Relationships tab is adding table occurence.
+TO naming: customer_ORDERS_shipped (in customers table looking for orders but we want to see only the shipped orders).
++ give TO filling color (e.g. red). + add text fields (Shipped) to link it to customer_ORDERS_shipped field.
+
+

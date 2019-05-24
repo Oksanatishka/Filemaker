@@ -1,0 +1,96 @@
+------------------------------------------------------------------------------------------------
+Day 01
+------------------------------------------------------------------------------------------------
+Chris - instuctor.
+FM - workplace innovative platform.
+
+Agile approach.
+bidding process.
+https://app.mural.co/   - planning
+https://balsamiq.com/   - mockups
+
+average 100 hours (4-6 weeks)
+
+Types of relationships:
+one to one: customer - address      - bad -> field
+one to many: customer - orders      - the best
+many to many: order - products      - bad -> joint table
+
+ctrl + l - layout mode
+
+_ActorIDpk    - _ at the beginning, pk - primary key
+fk - foreign key 
+
+Serial number (some risks in the past, now use Data Migration tool) - Calculated value (Get[UUID])
+
+table recurrence
+!! forget about portal filter -> instead create queries
+
+new Add-on table
+------------------------------------------------------------------------------------------------
+Day 02
+------------------------------------------------------------------------------------------------
+Inspector -> Autosizing (for scretching - responsive design on different screens)
+
+Check published style guides.
+Watch 2min video FMthemes
+https://www.filemakerthemes.com/
+https://www.filemakermagazine.com/
+
+custom functions (e.g. phone - mobile / other phone etc)
+https://www.briandunning.com/filemaker-custom-functions/
+
+http://filemakerhtml5.com/
+
+------------------------------------------------------------------------------------------------
+Day 03
+------------------------------------------------------------------------------------------------
+
+http://filemakerandapis.com/
+https://medium.com/@isolutions/integrating-apis-into-filemaker-apps-85a821c814
+
+we can't detect the whole world but using beacon we can detect physical things around you.
+detect beacons https://estimote.com/ (under 9. Mobile functions)
+
+
+use script triggers to show a specific layout on different devices(check user's device).
+
+Recursion - in v17 in custom functions, in v18 while function.
+
+apple script
+
+# Nav to Agenda l/o    - layout
+# Print
+# Nav Back
+
+To send email: 
+    'Save Records as PDF' f-n (specify the place where to save)
+    'Send Mail' f-n (SMTP Server)
+
+
+https://nodered.org/
+https://fmhelp.filemaker.com/docs/17/en/dataapi/index.html
+https://github.com/Luidog/fms-api-client
+
+
+page: 403
+
+
+https://www.tableau.com/
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+Tableau integration on the FileMaker Platform:
+1. http://kb.mit.edu/confluence/pages/viewpage.action?pageId=154195827
+2. https://support.filemaker.com/s/article/Overview-of-Tableau-integration-on-the-FileMaker-Platform-1503693098822?language=en_US
+3. https://www.youtube.com/watch?v=FiE2_Y-Dtto
+
+не работает через web data connector
+https://filemaker-server.42.us.org/fmi/data/v1/tableau/fm_connector.html
+https://filemaker-server.42.us.org/fmi/rest/tableau/fm_connector.html
